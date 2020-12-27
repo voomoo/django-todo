@@ -1,0 +1,26 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+{% if error %} <h5 class="d-flex justify-content-center alert alert-danger mx-5">{{ error }}</h5> {% endif %}
+
+<div class="container d-flex justify-content-center">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-outline-primary w-100" type="submit">Save</button>
+    </form>
+</div>
+<div class="container d-flex-column" style="width: 520px;">
+    <form method="POST" action="{% url 'completetodo' todo.id %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-success w-100" type="submit"> Complete </button>
+    </form>
+
+
+    <form method="POST" action="{% url 'deletetodo' todo.id %}">
+        {% csrf_token %}
+        <button class="btn btn-outline-danger w-100" type="submit"> Delete </button>
+    </form>
+</div>
+
+{% endblock %}

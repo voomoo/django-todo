@@ -1,0 +1,26 @@
+{% extends 'todo/base.html' %}
+
+{% block content %}
+
+<h1 class="d-flex justify-content-center">Current todos</h1>
+<h5 class="d-flex justify-content-center">Todo's with flag on the right means the todo is important</h5>
+<br>
+<div class="d-flex justify-content-center flex-wrap">
+    {% for todo in todos %}
+    <div class="card mx-1 my-1" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">{{ todo.title }} {% if todo.important %}🚩{% endif %} </h5>
+          {% if todo.memo %} 
+          <p class="card-text"> {{ todo.memo|truncatechars:30 }}</a></p>
+          {% else %}
+          <p class="card-text text-danger">No memo was added</p>
+          {% endif %}
+          <p>Date Created: {{ todo.created|date:"M d, Y." }}</p>
+          <a href="{% url 'viewtodo' todo.id %}" class="btn btn-primary">Details</a>
+        </div>
+      </div>
+    {% endfor %}
+</div>
+    
+
+{% endblock %}

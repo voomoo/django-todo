@@ -1,0 +1,44 @@
+{% extends 'todo/base.html' %}
+
+
+
+{%block content%} 
+<div class="container d-flex justify-content-center">
+    <h3>Django_Todo</h3>
+</div>
+
+<div class="container d-flex justify-content-center mb-4">
+    <p class="text-justify par">Django_TODO is a simple todo app built using python's django framework. Django_Todo
+        allows a user to:
+    </p>
+</div>
+
+<div class="container d-flex justify-content-evenly">
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Create Todos</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Update Todos</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <div class="card-body">
+          <h5 class="card-title">Delete Todos</h5>
+          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+        </div>
+      </div>
+</div>
+
+{%endblock%}
+
+<style>
+    .my-text{
+        text-align:justify;
+        text-align-last: center;
+    }
+</style>

@@ -1,0 +1,14 @@
+{% extends 'todo/base.html' %}
+
+{%block content%}
+<h3 class="d-flex justify-content-center">Sign up</h3>
+{% if error %} <h5 class="d-flex justify-content-center alert alert-danger mx-5">{{ error }}</h5> {% endif %}
+<div class="d-flex justify-content-center">
+    <form method="POST">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button class="btn btn-outline-success w-100" type="submit">Sign Up</button>
+    </form>
+</div>
+
+{% endblock%}
